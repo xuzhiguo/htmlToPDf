@@ -1,0 +1,19 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "html-pdf": "^2.1.0",
+    "moment": "^2.18.1"
+  },
+  "devDependencies": {
+    "phantomjs": "^2.1.7+deprecated"
+  }
+}

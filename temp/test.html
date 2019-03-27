@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .page {
+            width: 820px;
+            height: 1160px;
+            margin: 10px auto;
+            border: double 3px #000;
+        }
+
+        .header h3 {
+            text-align: center;
+            font-size: 2em;
+        }
+
+        .content {
+            padding: 10px 20px;
+            font-size: 1.5em;
+        }
+
+        .indent {
+            text-indent: 2em;
+        }
+
+        .row {
+            line-height: 2.5em;
+        }
+
+        .row span {
+            /* text-decoration: underline; */
+            border-bottom: solid 2px #000;
+            padding: 0 5px;
+        }
+
+        .empty-row {
+            height: 2.5em;
+            width: 100%;
+        }
+
+        .right {
+            text-align: right;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="header">
+            <h3>请假条</h3>
+        </div>
+    
+        <div class="content">
+                <div class="row">
+                    尊敬的领导：
+                </div>
+                <div class="row indent">
+                    您好！本人因<span id="reason"></span>需要请假，请假时间自 <span id="startYear"></span> 年 <span id="startMonth"></span> 月<span id="startDay"></span>日 至 <span id="endYear"></span> 年 <span id="endMonth"></span> 月 <span id="endDay"></span> 日共 <span id="total"></span> 天，恳请领导批!
+                </div>
+                <div class="empty-row"></div>
+                <div class="row">此致敬礼！</div>
+
+                <div class="row right">
+                    申请人：<span id="apply"></span>
+                </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    function fillData(reason, startYear, startMonth, startDay, endYear, endMonth, endDay, total, apply) {
+        var reasonDom = document.querySelector('#reason');
+        var startYearDom = document.querySelector('#startYear');
+        var startMonthDom = document.querySelector('#startMonth');
+        var startDayDom = document.querySelector('#startDay');
+        var endYearDom = document.querySelector('#endYear');
+        var endMonthDom = document.querySelector('#endMonth');
+        var endDayDom = document.querySelector('#endDay');
+        var totalDom = document.querySelector('#total');
+        var applyDom = document.querySelector('#apply');
+        
+        reasonDom.innerHTML = reason;
+        startYearDom.innerHTML = startYear;
+        startMonthDom.innerHTML = startMonth
+        startDayDom.innerHTML = startDay;
+        endYearDom.innerHTML = endYear;
+        endMonthDom.innerHTML = endMonth;
+        endDayDom.innerHTML = endDay;
+        totalDom.innerHTML = total;
+        applyDom.innerHTML = apply;
+        
+    }
+
+    fillData('感冒发烧流鼻涕', 2019, 3, 27, 2019, 3, 29, 3, '张三丰');
+
+</script>
