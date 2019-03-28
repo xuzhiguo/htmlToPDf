@@ -16,6 +16,6 @@ exports.createPDFProtocolFile = function (template, options, reg, filename) {
         if (err) {
             return console.log(err);
         }
-        console.log(res);
+        console.log('PDF生成完成，路径：' + res.filename);
     });
 }

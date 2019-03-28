@@ -10,18 +10,56 @@ var options = {
     "height": "10mm",
     "contents": ''
 }}; // 一些配置
-var name = '张三';
-// 匹配规则
-var reg = [
-  {
-    relus: /__name__/g,
-    match: name
-  },
-  {
-    relus: /__date__/g,
-    match: moment().format('YYYY年MM月DD日')
-  }
+
+var start = moment('2019-03-29 08:00');
+var end = moment('2019-04-05T18:00');
+var total = parseInt(end.diff(start, 's') / (24*60*60));
+
+
+
+
+var keyword =[
+    {
+        key: 'reason',
+        value: '感冒发烧流鼻涕痛不欲生'
+    }, {
+        key: 'start',
+        value: start.format('YYYY/MM/DD HH:mm')
+    }, {
+        key: 'end',
+        value: end.format('YYYY/MM/DD HH:mm')
+    }, {
+        key: 'total',
+        value: total
+    }, {
+        key: 'apply',
+        value: '桃白白'
+    }
 ];
 
+var regList = [];
 
-create.createPDFProtocolFile(html, options, reg, './dist/' + Date.now() + '.pdf'); // 传入参数 生成pdf
+keyword.forEach(function(item) {
+    var reg = new RegExp('\\${' + item.key + '}', 'g');
+    regList.push({
+        relus: reg,
+        match: item.value
+    });
+});
+
+
+
+// 匹配规则
+// var regList = [
+//   {
+//     relus: /\$\{reason\}/g,
+//     match: reason
+//   },
+//   {
+//     relus: /__date__/g,
+//     match: moment().format('YYYY年MM月DD日')
+//   }
+// ];
+
+
+create.createPDFProtocolFile(html, options, regList, './dist/' + Date.now() + '.pdf'); // 传入参数 生成pdf

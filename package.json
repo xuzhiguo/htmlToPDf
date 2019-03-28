@@ -11,9 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "html-pdf": "^2.1.0",
-    "moment": "^2.18.1"
-  },
-  "devDependencies": {
+    "moment": "^2.18.1",
     "phantomjs": "^2.1.7+deprecated"
   }
 }

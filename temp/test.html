@@ -35,6 +35,8 @@
             /* text-decoration: underline; */
             border-bottom: solid 2px #000;
             padding: 0 5px;
+            font-family: cursive;
+            font-weight: 700;
         }
 
         .empty-row {
@@ -59,42 +61,15 @@
                     尊敬的领导：
                 </div>
                 <div class="row indent">
-                    您好！本人因<span id="reason"></span>需要请假，请假时间自 <span id="startYear"></span> 年 <span id="startMonth"></span> 月<span id="startDay"></span>日 至 <span id="endYear"></span> 年 <span id="endMonth"></span> 月 <span id="endDay"></span> 日共 <span id="total"></span> 天，恳请领导批!
+                    您好！本人因<span>${reason}</span> 需要请假，请假时间自 <span>${start}</span> 至 <span>${end}</span> 共 <span>${total}</span> 天，恳请领导批!
                 </div>
                 <div class="empty-row"></div>
                 <div class="row">此致敬礼！</div>
 
                 <div class="row right">
-                    申请人：<span id="apply"></span>
+                    申请人：<span>${apply}</span>
                 </div>
         </div>
     </div>
 </body>
 </html>
-<script>
-    function fillData(reason, startYear, startMonth, startDay, endYear, endMonth, endDay, total, apply) {
-        var reasonDom = document.querySelector('#reason');
-        var startYearDom = document.querySelector('#startYear');
-        var startMonthDom = document.querySelector('#startMonth');
-        var startDayDom = document.querySelector('#startDay');
-        var endYearDom = document.querySelector('#endYear');
-        var endMonthDom = document.querySelector('#endMonth');
-        var endDayDom = document.querySelector('#endDay');
-        var totalDom = document.querySelector('#total');
-        var applyDom = document.querySelector('#apply');
-        
-        reasonDom.innerHTML = reason;
-        startYearDom.innerHTML = startYear;
-        startMonthDom.innerHTML = startMonth
-        startDayDom.innerHTML = startDay;
-        endYearDom.innerHTML = endYear;
-        endMonthDom.innerHTML = endMonth;
-        endDayDom.innerHTML = endDay;
-        totalDom.innerHTML = total;
-        applyDom.innerHTML = apply;
-        
-    }
-
-    fillData('感冒发烧流鼻涕', 2019, 3, 27, 2019, 3, 29, 3, '张三丰');
-
-</script>
